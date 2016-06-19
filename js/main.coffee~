@@ -1,0 +1,108 @@
+SCALE = 1
+ROTATION = 0
+UNIQUE_ID  = 1
+
+class Zouti
+  constructor : (@type) ->
+    @id = UNIQUE_ID++
+    switch @type
+      when "equerre"
+        html = "<div id='#{@id}' class='zouti #{@type}'  data-scale='1' data-rotation='0'></div>"
+    
+    $( "#container"    ).append html
+    $( ".zouti"  ).removeClass "selected"
+    $( "##{@id}" )
+      .draggable()
+      .addClass "selected"
+      .css "top:0;"
+
+$ ->
+  gotSources = (sourceInfos) ->
+    i = 0
+    while i != sourceInfos.length
+      sourceInfo = sourceInfos[i]
+      option = document.createElement('option')
+      option.value = sourceInfo.id
+      if sourceInfo.kind == 'audio'
+        option.text = sourceInfo.label or 'microphone ' + audioSelect.length + 1
+        audioSelect.appendChild option
+      else if sourceInfo.kind == 'video'
+        option.text = sourceInfo.label or 'camera ' + videoSelect.length + 1
+        videoSelect.appendChild option
+      else
+        console.log 'Some other kind of source: ', sourceInfo
+      ++i
+    return
+
+  successCallback = (stream) ->
+    window.stream = stream
+    # make stream available to console
+    videoElement.src = window.URL.createObjectURL(stream)
+    videoElement.play()
+    return
+
+  errorCallback = (error) ->
+    console.log 'navigator.getUserMedia error: ', error
+    return
+
+  start = ->
+    if window.stream
+      videoElement.src = null
+      window.stream.stop()
+    audioSource = audioSelect.value
+    videoSource = videoSelect.value
+    constraints = 
+      audio: optional: [ { sourceId: audioSource } ]
+      video: optional: [ { sourceId: videoSource } ]
+    navigator.getUserMedia constraints, successCallback, errorCallback
+    return
+
+  'use strict'
+  videoElement = document.querySelector('video')
+  audioSelect = document.querySelector('select#audioSource')
+  videoSelect = document.querySelector('select#videoSource')
+  navigator.getUserMedia = navigator.getUserMedia or navigator.webkitGetUserMedia or navigator.mozGetUserMedia
+  if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices)
+    alert 'This browser does not support MediaStreamTrack.\n\nTry Chrome.'
+  else
+    MediaStreamTrack.getSources gotSources
+  audioSelect.onchange = start
+  videoSelect.onchange = start
+  start()
+  
+  screen = $('body')[0]
+  $( "#menu" ).on "click", -> 
+    new Zouti("equerre")
+  
+  $( "body" ).on "click", ".zouti", ->
+    $( ".zouti" ).removeClass "selected"
+    $( this ).addClass "selected"
+    $("#slider-r").slider 
+    $("#slider-s").slider
+  
+  $( ".main-container" ).toggle()
+  $("#toggle-menu").on "click", -> $( ".main-container" ).toggle()
+  
+  $("#slider-s").slider       
+    value: SCALE
+    min  : 0
+    max  : 4
+    step : 0.01
+    slide: (event, ui) ->
+      SCALE = ui.value
+      $('.selected').css 'transform', "rotate(#{ROTATION}deg) scale(#{SCALE})"
+          
+  $("#slider-r").slider    
+    value: ROTATION
+    orientation: "vertical"
+    min  : -180
+    max  : 180
+    step : 1
+    slide: (event, ui) ->
+      ROTATION = ui.value
+      $('.selected').css 'transform', "rotate(#{ROTATION}deg) scale(#{SCALE})"
+
+
+
+
+
