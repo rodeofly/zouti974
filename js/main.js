@@ -12,14 +12,14 @@
     function Zouti(type) {
       var html;
       this.type = type;
-      this.id = UNIQUE_ID++;
-      switch (this.type) {
-        case "equerre":
-          html = "<div id='" + this.id + "' class='zouti " + this.type + "'  data-scale='1' data-rotation='0'></div>";
+      if (!$("#Zouti").length) {
+        $("body").prepend("<div id='Zouti'></div>");
       }
-      $("#container").prepend(html);
+      this.id = UNIQUE_ID++;
+      html = "<div id='" + this.id + "' class='zouti " + this.type + "' data-scale='1' data-rotation='0'></div>";
       $(".zouti").removeClass("selected");
-      $("#" + this.id).draggable().addClass("selected").css("top:0;");
+      $("#Zouti").prepend(html);
+      $("#" + this.id).draggable().addClass("selected");
     }
 
     return Zouti;
@@ -91,12 +91,19 @@
     } else {
       MediaStreamTrack.getSources(gotSources);
     }
-    audioSelect.onchange = start;
-    videoSelect.onchange = start;
+    audioSelect.onchange = start();
+    videoSelect.onchange = start();
     start();
     screen = $('body')[0];
+    $("#menu-div").toggle();
     $("#menu").on("click", function() {
+      return $("#menu-div").toggle();
+    });
+    $("#create-equerre").on("click", function() {
       return new Zouti("equerre");
+    });
+    $("#create-rapporteur").on("click", function() {
+      return new Zouti("rapporteur");
     });
     $("body").on("click", ".zouti", function() {
       $(".zouti").removeClass("selected");

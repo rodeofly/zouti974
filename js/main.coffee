@@ -4,17 +4,17 @@ UNIQUE_ID  = 1
 
 class Zouti
   constructor : (@type) ->
+    if not $( "#Zouti" ).length
+      $( "body" ).prepend "<div id='Zouti'></div>"
     @id = UNIQUE_ID++
-    switch @type
-      when "equerre"
-        html = "<div id='#{@id}' class='zouti #{@type}'  data-scale='1' data-rotation='0'></div>"
     
-    $( "#container"    ).prepend html
+    html = "<div id='#{@id}' class='zouti #{@type}' data-scale='1' data-rotation='0'></div>"
+    
     $( ".zouti"  ).removeClass "selected"
+    $( "#Zouti"    ).prepend html 
     $( "##{@id}" )
       .draggable()
       .addClass "selected"
-      .css "top:0;"
 
 $ ->
   gotSources = (sourceInfos) ->
@@ -66,14 +66,20 @@ $ ->
     alert 'This browser does not support MediaStreamTrack.\n\nTry Chrome.'
   else
     MediaStreamTrack.getSources gotSources
-  audioSelect.onchange = start
-  videoSelect.onchange = start
+  audioSelect.onchange = start()
+  videoSelect.onchange = start()
   start()
   
   screen = $('body')[0]
-  $( "#menu" ).on "click", -> 
+  $( "#menu-div" ).toggle()
+  $( "#menu" ).on "click", -> $( "#menu-div" ).toggle()
+  
+  $( "#create-equerre" ).on "click", -> 
     new Zouti("equerre")
   
+  $( "#create-rapporteur" ).on "click", -> 
+    new Zouti("rapporteur")
+    
   $( "body" ).on "click", ".zouti", ->
     $( ".zouti" ).removeClass "selected"
     $( this ).addClass "selected"

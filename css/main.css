@@ -154,50 +154,78 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 #menu {
-  z-index: 10001;
-  position : absolute;
-  width : 2vw;
-  height : 2vw;
-  bottom : 1vw;
-  right : 1vw;
-
-
+  position: fixed;
+  z-index : 10000;
+  bottom: 0;
+  right: 0;
+  width: 5vw;
+  height : 5vw;
+  border: 3px solid #73AD21;
+}
+#Zouti {
+position : absolute;
+top: 0;
+left : 0;
+width : 100%;
+height : 100%;
 }
 
+#menu-div {
+  position : fixed;
+  width : 50%;
+  height : 50%;
+  top : 25%;
+  left : 25%;
+}
+
+
+
 #slider-s, #slider-r {
-  position : absolute;
-  
+  position: fixed; 
+  z-index : 10000;
+  border: 3px solid #73AD21;
 }
 
 #slider-s {
-  z-index : 10000;
   top : 0;
-  left : 0;
+  left : 0; 
   width : 100%;
 }
 
 #slider-r {
-  z-index : 10000;
   bottom: 0;
   right : 0;
   height : 100%;
 }
 
-#container, #cam {
+#cam {
  position : relative;
  top : 0;
  left : 0;
  width : 100%;
  height : 100%;
 }
-.equerre {
+.zouti {
   z-index : 9999;
-  position : relative;
-  width : 1166px;
-  height : 590px;
-  background : 100% 100% url('./img/equerre-compas.svg');
+  position: relative;
+  top     : 0;
+  left    : 0;
+
 
 }
+.zouti.equerre {
+  width   : 1166px;
+  height  : 590px;
+  background : 100% 100% url('./img/equerre-compas.svg');
+}
+
+.zouti.rapporteur {
+  width   : 413px;
+  height  : 413px;
+  background : 100% 100% url('./img/rapporteur.svg');
+}
+
+
 
 .selected {
     -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
