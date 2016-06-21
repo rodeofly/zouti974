@@ -153,6 +153,11 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+  position: relative;
+
+}
+
 #menu {
   position: fixed;
   z-index : 10000;
@@ -171,13 +176,16 @@ height : 100%;
 }
 
 #menu-div {
-  position : fixed;
-  width : 50%;
-  height : 50%;
-  top : 25%;
-  left : 25%;
+  z-index : 10010
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  width:300px;
+  padding : 1%;
+  border : 3px solid black;
+  border-radius : 50px;
+  background : rgba(0,0,0,0.5);
 }
-
 
 
 #slider-s, #slider-r {
@@ -199,7 +207,7 @@ height : 100%;
 }
 
 #cam {
- position : absolute;
+ position : relative;
  top : 0;
  left : 0;
  width : 100%;
@@ -225,14 +233,21 @@ height : 100%;
   background : 100% 100% url('./img/rapporteur.svg');
 }
 
+.zouti.regle {
+  width   : 1465;
+  height  : 740px;
+  background : 100% 100% url('./img/regle.svg');
+}
 
 
+/**
 .selected {
     -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
     filter: url(#drop-shadow);
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
+**/
 
 .resize
 {

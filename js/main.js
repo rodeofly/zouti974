@@ -29,8 +29,9 @@
   $(function() {
     var audioSelect, errorCallback, gotSources, screen, start, successCallback, videoElement, videoSelect;
     gotSources = function(sourceInfos) {
-      var i, option, sourceInfo;
+      var i, option, results, sourceInfo;
       i = 0;
+      results = [];
       while (i !== sourceInfos.length) {
         sourceInfo = sourceInfos[i];
         option = document.createElement('option');
@@ -44,16 +45,16 @@
         } else {
           console.log('Some other kind of source: ', sourceInfo);
         }
-        ++i;
+        results.push(++i);
       }
+      return results;
     };
     successCallback = function(stream) {
       window.stream = stream;
-      videoElement.src = window.URL.createObjectURL(stream);
-      videoElement.play();
+      return videoElement.src = window.URL.createObjectURL(stream);
     };
     errorCallback = function(error) {
-      console.log('navigator.getUserMedia error: ', error);
+      return console.log('navigator.getUserMedia error: ', error);
     };
     start = function() {
       var audioSource, constraints, videoSource;
@@ -79,9 +80,8 @@
           ]
         }
       };
-      navigator.getUserMedia(constraints, successCallback, errorCallback);
+      return navigator.getUserMedia(constraints, successCallback, errorCallback);
     };
-    'use strict';
     videoElement = document.querySelector('video');
     audioSelect = document.querySelector('select#audioSource');
     videoSelect = document.querySelector('select#videoSource');
@@ -91,9 +91,14 @@
     } else {
       MediaStreamTrack.getSources(gotSources);
     }
-    audioSelect.onchange = start();
-    videoSelect.onchange = start();
-    start();
+    $(audioSelect).on("change", function() {
+      alert("ok");
+      return start();
+    });
+    $(videoSelect).on("change", function() {
+      alert("ok");
+      return start();
+    });
     screen = $('body')[0];
     $("#menu-div").toggle();
     $("#menu").on("click", function() {
@@ -101,6 +106,9 @@
     });
     $("#create-equerre").on("click", function() {
       return new Zouti("equerre");
+    });
+    $("#create-regle").on("click", function() {
+      return new Zouti("regle");
     });
     $("#create-rapporteur").on("click", function() {
       return new Zouti("rapporteur");

@@ -32,18 +32,13 @@ $ ->
       else
         console.log 'Some other kind of source: ', sourceInfo
       ++i
-    return
 
   successCallback = (stream) ->
     window.stream = stream
     # make stream available to console
     videoElement.src = window.URL.createObjectURL(stream)
-    videoElement.play()
-    return
 
-  errorCallback = (error) ->
-    console.log 'navigator.getUserMedia error: ', error
-    return
+  errorCallback = (error) -> console.log 'navigator.getUserMedia error: ', error
 
   start = ->
     if window.stream
@@ -55,9 +50,7 @@ $ ->
       audio: optional: [ { sourceId: audioSource } ]
       video: optional: [ { sourceId: videoSource } ]
     navigator.getUserMedia constraints, successCallback, errorCallback
-    return
 
-  'use strict'
   videoElement = document.querySelector('video')
   audioSelect = document.querySelector('select#audioSource')
   videoSelect = document.querySelector('select#videoSource')
@@ -66,9 +59,14 @@ $ ->
     alert 'This browser does not support MediaStreamTrack.\n\nTry Chrome.'
   else
     MediaStreamTrack.getSources gotSources
-  audioSelect.onchange = start()
-  videoSelect.onchange = start()
-  start()
+  
+  $( audioSelect ).on "change", -> 
+    alert "ok"
+    start()
+  $( videoSelect ).on "change", -> 
+    alert "ok"
+    start()
+  #start()
   
   screen = $('body')[0]
   $( "#menu-div" ).toggle()
@@ -76,6 +74,9 @@ $ ->
   
   $( "#create-equerre" ).on "click", -> 
     new Zouti("equerre")
+  
+  $( "#create-regle" ).on "click", -> 
+    new Zouti("regle")
   
   $( "#create-rapporteur" ).on "click", -> 
     new Zouti("rapporteur")
