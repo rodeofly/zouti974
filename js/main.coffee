@@ -28,10 +28,10 @@ $ ->
       option.value = sourceInfo.id
       if sourceInfo.kind == 'audio'
         option.text = sourceInfo.label or 'microphone ' + audioSelect.length + 1
-        $( audioSelect ).prepend option
+        audioSelect.appendChild option
       else if sourceInfo.kind == 'video'
         option.text = sourceInfo.label or 'camera ' + videoSelect.length + 1
-        $( videoSelect ).prepend option
+        videoSelect.appendChild option
       else
         console.log 'Some other kind of source: ', sourceInfo
       ++i
@@ -63,11 +63,8 @@ $ ->
   else
     MediaStreamTrack.getSources gotSources
   
-  $( audioSelect ).on "change", ->
-    start()
-  $( videoSelect ).on "change", -> 
-    alert "ok"
-    start()
+  $( audioSelect ).on "change", -> start()
+  $( videoSelect ).on "change", -> start()
   start()
   
   screen = $('body')[0]

@@ -63,12 +63,9 @@ $ ->
   else
     MediaStreamTrack.getSources gotSources
   
-  $( audioSelect ).on "change", ->
-    start()
-  $( videoSelect ).on "change", -> 
-    alert "ok"
-    start()
-  #start()
+  $( audioSelect ).on "change", -> start()
+  $( videoSelect ).on "change", -> start()
+  start()
   
   screen = $('body')[0]
   $( "#menu-div" ).toggle()
