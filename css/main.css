@@ -155,9 +155,20 @@ nav a:hover {
    ========================================================================== */
 body {
   position: relative;
+  top : 0px;
+  left: 0px;
+  width : 100vw;
+  height : 100vh;
+}
+#delete {
+  position : fixed;
+  bottom: 25px;
+  left: 25px;
+  width : 75px;
+  height : 75px;
+  background : 100% 100% url('./img/cancel_960_720.png');
 
 }
-
 #menu {
   position: absolute;
   bottom: 2.5vw;

@@ -118,7 +118,18 @@
       return new Zouti("rapporteur");
     });
     $("body").on("click", ".zouti", function() {
+      var id;
+      id = $(this).attr("id");
       $(".zouti").removeClass("selected");
+      $("#delete").remove();
+      $("body").append("<div id='delete'></div>");
+      $("#delete").on("click", function() {
+        $("#" + id).remove();
+        return $(this).remove();
+      });
+      setTimeout((function() {
+        return $("#delete").remove();
+      }), 2000);
       $(this).addClass("selected").css({
         zIndex: MAX++
       });

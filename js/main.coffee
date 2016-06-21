@@ -81,7 +81,14 @@ $ ->
     new Zouti("rapporteur")
     
   $( "body" ).on "click", ".zouti", ->
+    id = $(this).attr "id"
     $( ".zouti" ).removeClass "selected"
+    $( "#delete" ).remove()
+    $( "body" ).append "<div id='delete'></div>"
+    $( "#delete" ).on "click", ->
+      $( "##{id}" ).remove()
+      $( this ).remove()
+    setTimeout (-> $("#delete").remove()),2000
     $( this )
       .addClass "selected"
       .css zIndex: MAX++
