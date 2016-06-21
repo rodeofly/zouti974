@@ -103,7 +103,6 @@
     $(videoSelect).on("change", function() {
       return start();
     });
-    start();
     screen = $('body')[0];
     $("#menu-div").toggle();
     $("#menu").on("click", function() {

@@ -65,7 +65,7 @@ $ ->
   
   $( audioSelect ).on "change", -> start()
   $( videoSelect ).on "change", -> start()
-  start()
+  #start()
   
   screen = $('body')[0]
   $( "#menu-div" ).toggle()
