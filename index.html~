@@ -21,11 +21,15 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             
         <![endif]-->
-        <button id="menu"></button>
-        <div id="slider-s"></div><div id="slider-r"></div>
+        
+        
         <video id="cam" muted="" autoplay=""></video>
+        <div id="slider-s"></div><div id="slider-r"></div>
+        <button id="menu">
+          <span id="scale-info"></span> | <span id="rotation-info"></span>
+        </button>
         <div id="menu-div">
-          <button id="create-regle">Équerre</button>
+          <button id="create-regle">Règle</button>
           <button id="create-equerre">Équerre</button>
           <button id="create-rapporteur">Rapporteur</button>
           <div class="select">

@@ -159,14 +159,14 @@ body {
 }
 
 #menu {
-  position: fixed;
-  z-index : 10000;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  bottom: 2.5vw;
+  right: 2.5vw;
   width: 5vw;
   height : 5vw;
   border: 3px solid #73AD21;
 }
+
 #Zouti {
 position : absolute;
 top: 0;
@@ -176,7 +176,6 @@ height : 100%;
 }
 
 #menu-div {
-  z-index : 10010;
   position : absolute;
   top : 50%;
   left : 50%;
@@ -187,10 +186,8 @@ height : 100%;
   background : rgba(0,0,0,0.5);
 }
 
-
 #slider-s, #slider-r {
   position: fixed; 
-  z-index : 10000;
   border: 3px solid #73AD21;
 }
 
@@ -213,14 +210,11 @@ height : 100%;
  width : 100%;
  height : 100%;
 }
+
 .zouti {
-  z-index : 9999;
   position: relative;
-  top     : 0;
-  left    : 0;
-
-
 }
+
 .zouti.equerre {
   width   : 1166px;
   height  : 590px;
@@ -234,12 +228,15 @@ height : 100%;
 }
 
 .zouti.regle {
-  width   : 1465;
-  height  : 740px;
+  width   : 1600px;
+  height  : 1200px;
   background : 100% 100% url('./img/regle.svg');
 }
 
+.info {
+  font-size : 1em;
 
+}
 /**
 .selected {
     -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
