@@ -44,10 +44,10 @@
         option.value = sourceInfo.id;
         if (sourceInfo.kind === 'audio') {
           option.text = sourceInfo.label || 'microphone ' + audioSelect.length + 1;
-          $(audioSelect).prepend(option);
+          audioSelect.appendChild(option);
         } else if (sourceInfo.kind === 'video') {
           option.text = sourceInfo.label || 'camera ' + videoSelect.length + 1;
-          $(videoSelect).prepend(option);
+          videoSelect.appendChild(option);
         } else {
           console.log('Some other kind of source: ', sourceInfo);
         }
@@ -101,7 +101,6 @@
       return start();
     });
     $(videoSelect).on("change", function() {
-      alert("ok");
       return start();
     });
     start();

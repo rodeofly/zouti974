@@ -213,9 +213,6 @@ height : 100%;
 
 .zouti {
   position: relative;
-  top     : 0px;
-  left    : 0px;
-  
 }
 
 .zouti.equerre {

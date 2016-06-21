@@ -162,6 +162,8 @@ body {
   position: absolute;
   bottom: 2.5vw;
   right: 2.5vw;
+  min-width : 50px;
+  min-height: 50px;
   width: 5vw;
   height : 5vw;
   border: 3px solid #73AD21;
