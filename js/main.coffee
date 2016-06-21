@@ -2,7 +2,23 @@ SCALE = 1
 ROTATION = 0
 UNIQUE_ID  = 1
 MAX = 0
-
+up = ($element) ->
+  $("#delete").show()
+  id = $element.attr "id"
+  $( ".zouti" )
+    .removeClass "selected"
+    .css "z-index: 0;"
+    
+  $( "#delete" ).attr "data-id", "#{id}"
+  $( "#slider-s" ).slider "value", $element.attr "data-scale"
+  $( "#slider-r" ).slider "value", $element.attr "data-rotation"
+  $( "#rotation-info" ).html "#{$element.attr 'data-rotation'}°"
+  $( "#scale-info" ).html "x#{$element.attr 'data-scale'}"
+  setTimeout (-> $("#delete").hide()),2000
+  $element
+    .addClass "selected"
+    .css "z-index: 1;"
+      
 class Zouti
   constructor : (@type) ->
     if not $( "#Zouti" ).length
@@ -15,7 +31,8 @@ class Zouti
     $( "#Zouti"    ).append html 
     x = $( "##{@id}" ).offset()
     $( "##{@id}" )
-      .draggable()
+      .draggable
+        start: ( event, ui ) -> up($(this))
       .addClass "selected"
       .css top: -x.top, left: -x.left
     $( "#delete" ).attr "data-id", "#{@id}"
@@ -93,20 +110,10 @@ $ ->
   $( "#create-pied-a-coulisse" ).on "click", -> 
     new Zouti("pied-a-coulisse")
     $( "#glissiere2" ).draggable()
+      
+  $( "body" ).on "click", ".zouti", -> up($(this))
   
- 
-    
-    
-  $( "body" ).on "click", ".zouti", ->
-    $("#delete").show()
-    id = $(this).attr "id"
-    $( ".zouti" ).removeClass "selected"
-    $( "#delete" ).attr "data-id", "#{id}"
-    
-    setTimeout (-> $("#delete").hide()),2000
-    $( this )
-      .addClass "selected"
-      .css zIndex: MAX++
+  $( "#menu-div" ).draggable()
     
 
   $( "body" ).on "click", "#delete", ->
@@ -116,7 +123,9 @@ $ ->
   $( ".main-container" ).toggle()
   $("#toggle-menu").on "click", -> $( ".main-container" ).toggle()
   
-  $( "#menu-div" ).draggable()
+  
+    
+    
   $("#slider-s").slider       
     value: SCALE
     min  : 0
@@ -125,7 +134,10 @@ $ ->
     slide: (event, ui) ->
       SCALE = ui.value
       $( "#scale-info" ).html("x#{SCALE}")
-      $('.selected').css 'transform', "rotate(#{ROTATION}deg) scale(#{SCALE})"
+      $('.selected')
+        .css 'transform', "rotate(#{$('.selected').attr 'data-rotation'}deg) scale(#{SCALE})"
+        .attr "data-scale", "#{SCALE}"
+
           
   $("#slider-r").slider    
     value: ROTATION
@@ -136,7 +148,9 @@ $ ->
     slide: (event, ui) ->
       ROTATION = ui.value
       $( "#rotation-info" ).html("#{ROTATION}°")
-      $('.selected').css 'transform', "rotate(#{ROTATION}deg) scale(#{SCALE})"
+      $('.selected')
+        .css 'transform', "rotate(#{ROTATION}deg) scale(#{$('.selected').attr 'data-scale'})"
+        .attr "data-rotation", "#{ROTATION}"        
 
 
 

@@ -24,7 +24,7 @@
         
         
         <video id="cam" muted="" autoplay=""></video>
-        <div id="slider-s"></div><div id="slider-r"></div>
+        
         <button id="menu">
           <span id="scale-info" class="info" ></span> | <span id="rotation-info" class="info"></span>
         </button>
@@ -35,7 +35,7 @@
           <button id="create-rapporteur-180">180°</button>
           <button id="create-rapporteur-360">360°</button>
           <button id="create-pied-a-coulisse">Pied à coulisse</button>
-          <button id="create-couleur">Couleurs</button>
+          <button id="create-couleurs">Couleurs</button>
           <div class="select">
             <label for="audioSource">Audio source: </label><select id="audioSource"></select></div>
       
@@ -44,7 +44,7 @@
         </div>
         
         <div id="delete" data-id=""></div>
-        
+        <div id="slider-s"></div><div id="slider-r"></div>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

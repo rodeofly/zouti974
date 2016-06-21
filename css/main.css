@@ -191,7 +191,9 @@ height : 100%;
 }
 
 #menu-div {
+
   position : absolute;
+  z-index = 10000;
   top  : 50%;
   left : 50%;
   width: 400px;
@@ -202,7 +204,6 @@ height : 100%;
 }
 
 #slider-s, #slider-r {
-  z-index = 10000;
   position: fixed; 
   border: 3px solid #73AD21;
   font-size : 3em;
@@ -220,6 +221,10 @@ height : 100%;
   bottom: 0;
   right : 0;
   height : 100%;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  z-index = 10000;
+
 }
 
 #cam {
@@ -241,8 +246,8 @@ height : 100%;
 }
 
 .zouti.equerre {
-  width   : 1166px;
-  height  : 590px;
+  width   : 1155px;
+  height  : 578px;
   background : 100% 100% url('./img/equerre-compas.svg');
 }
 
@@ -289,7 +294,10 @@ height : 100%;
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 **/
+.selected {
+  border : solid black 1px;
 
+}
 
 .ui-resizable-se{
  width: 7px;
