@@ -160,15 +160,17 @@ body {
   width : 100vw;
   height : 100vh;
 }
-.delete {
-  position : fixed;
-  bottom: 25px;
-  left: 25px;
-  width : 75px;
-  height : 75px;
-  background : 100% 100% url('./img/cancel_960_720.png');
 
+#delete {
+  z-index  : 10000;
+  position : fixed;
+  background : 100% 100% url('./img/cancel_960_720.png');
+  bottom : 25px;
+  left   : 25px;
+  width  : 75px;
+  height : 75px;
 }
+
 #menu {
   position: absolute;
   bottom: 2.5vw;
@@ -190,18 +192,22 @@ height : 100%;
 
 #menu-div {
   position : absolute;
-  top : 50%;
+  top  : 50%;
   left : 50%;
-  width:300px;
+  width: 400px;
   padding : 1%;
-  border : 3px solid black;
-  border-radius : 50px;
-  background : rgba(0,0,0,0.5);
+  border  : 3px solid black;
+  border-radius : 5px;
+  background    : rgba(0,0,0,0.5);
 }
 
 #slider-s, #slider-r {
+  z-index = 10000;
   position: fixed; 
   border: 3px solid #73AD21;
+  font-size : 3em;
+  background : transparent;
+  border : none;
 }
 
 #slider-s {
@@ -228,23 +234,48 @@ height : 100%;
   position: relative;
 }
 
+.zouti.grille {
+  width   : 940px;
+  height  : 940px;
+  background : 100% 100% url('./img/grille.svg');
+}
+
 .zouti.equerre {
   width   : 1166px;
   height  : 590px;
   background : 100% 100% url('./img/equerre-compas.svg');
 }
 
-.zouti.rapporteur {
+.zouti.rapporteur-180 {
+  width   : 355px;
+  height  : 196px;
+  background : 100% 100% url('./img/rapporteur-180.svg');
+}
+
+.zouti.rapporteur-360 {
   width   : 413px;
   height  : 413px;
-  background : 100% 100% url('./img/rapporteur.svg');
+  background : 100% 100% url('./img/rapporteur-360.svg');
 }
 
 .zouti.regle {
-  width   : 1600px;
-  height  : 1200px;
+  width   : 2276px;
+  height  : 162px;
   background : 100% 100% url('./img/regle.svg');
 }
+
+.zouti.pied-a-coulisse {
+  width   : 3040px;
+  height  : 1080px;
+  background : 100% 100% url('./img/pied-a-coulisse.svg');
+}
+
+.zouti.couleurs {
+  width   : 540px;
+  height  : 540px;
+  background : 100% 100% url('./img/pied-a-coulisse.svg');
+}
+
 
 .info {
   font-size : 1em;
@@ -259,13 +290,6 @@ height : 100%;
 }
 **/
 
-.resize
-{
-    position:absolute;
-     border-color:black;
-     border-style:solid;
-     border-width:1px;
-}
 
 .ui-resizable-se{
  width: 7px;

@@ -1,7 +1,7 @@
 SCALE = 1
 ROTATION = 0
 UNIQUE_ID  = 1
-MAX = 10000
+MAX = 0
 
 class Zouti
   constructor : (@type) ->
@@ -18,6 +18,7 @@ class Zouti
       .draggable()
       .addClass "selected"
       .css top: -x.top, left: -x.left
+    $( "#delete" ).attr "data-id", "#{@id}"
 
 $ ->
   gotSources = (sourceInfos) ->
@@ -77,25 +78,38 @@ $ ->
   $( "#create-regle" ).on "click", -> 
     new Zouti("regle")
   
-  $( "#create-rapporteur" ).on "click", -> 
-    new Zouti("rapporteur")
+  $( "#create-rapporteur-180" ).on "click", -> 
+    new Zouti("rapporteur-180")
+  
+  $( "#create-rapporteur-360" ).on "click", -> 
+    new Zouti("rapporteur-360")
+  
+  $( "#create-grille" ).on "click", -> 
+    new Zouti("grille")
+  
+  $( "#create-pied-a-coulisse" ).on "click", -> 
+    new Zouti("pied-a-coulisse")
+    $( "#glissiere2" ).draggable()
+  
+ 
+    
     
   $( "body" ).on "click", ".zouti", ->
+    $("#delete").show()
     id = $(this).attr "id"
     $( ".zouti" ).removeClass "selected"
-    $( "#delete" ).remove()
-    $( "body" ).append "<div id='delete'></div>"
-    $( "#delete" ).on "click", ->
-      $( "##{id}" ).remove()
-      $( this ).remove()
-    setTimeout (-> $("#delete").remove()), 2000
+    $( "#delete" ).attr "data-id", "#{id}"
+    
+    setTimeout (-> $("#delete").hide()),2000
     $( this )
       .addClass "selected"
       .css zIndex: MAX++
     
-    $("#slider-r").slider 
-    $("#slider-s").slider
-  
+
+  $( "body" ).on "click", "#delete", ->
+    $( "##{$(this).attr 'data-id'}" ).remove()
+    $( this ).hide()
+      
   $( ".main-container" ).toggle()
   $("#toggle-menu").on "click", -> $( ".main-container" ).toggle()
   

@@ -8,7 +8,7 @@
 
   UNIQUE_ID = 1;
 
-  MAX = 10000;
+  MAX = 0;
 
   Zouti = (function() {
     function Zouti(type) {
@@ -26,6 +26,7 @@
         top: -x.top,
         left: -x.left
       });
+      $("#delete").attr("data-id", "" + this.id);
     }
 
     return Zouti;
@@ -114,27 +115,38 @@
     $("#create-regle").on("click", function() {
       return new Zouti("regle");
     });
-    $("#create-rapporteur").on("click", function() {
-      return new Zouti("rapporteur");
+    $("#create-rapporteur-180").on("click", function() {
+      return new Zouti("rapporteur-180");
+    });
+    $("#create-rapporteur-360").on("click", function() {
+      return new Zouti("rapporteur-360");
+    });
+    $("#create-grille").on("click", function() {
+      return new Zouti("grille");
+    });
+    $("#create-couleurs").on("click", function() {
+      return new Zouti("couleurs");
+    });
+    $("#create-pied-a-coulisse").on("click", function() {
+      new Zouti("pied-a-coulisse");
+      return $("#glissiere2").draggable();
     });
     $("body").on("click", ".zouti", function() {
       var id;
+      $("#delete").show();
       id = $(this).attr("id");
       $(".zouti").removeClass("selected");
-      $("#delete").remove();
-      $("body").append("<div id='delete'></div>");
-      $("#delete").on("click", function() {
-        $("#" + id).remove();
-        return $(this).remove();
-      });
+      $("#delete").attr("data-id", "" + id);
       setTimeout((function() {
-        return $("#delete").remove();
+        return $("#delete").hide();
       }), 2000);
-      $(this).addClass("selected").css({
+      return $(this).addClass("selected").css({
         zIndex: MAX++
       });
-      $("#slider-r").slider;
-      return $("#slider-s").slider;
+    });
+    $("body").on("click", "#delete", function() {
+      $("#" + ($(this).attr('data-id'))).remove();
+      return $(this).hide();
     });
     $(".main-container").toggle();
     $("#toggle-menu").on("click", function() {

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="940" viewbox="0 0 940 940">
+<!--  boundary  for 900 x 900  -->
+<rect x="0" y="0" width="900" height="900" fill="none" stroke="red"/>
+<text x="910" y="900" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">900</text>
+<text x="895" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">900</text>
+<!--  100 increments grid  -->
+<path d="M 0 100 L 900 100" stroke="red"/><text x="910" y="100" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">100</text>
+<path d="M 0 200 L 900 200" stroke="red"/><text x="910" y="200" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">200</text>
+<path d="M 0 300 L 900 300" stroke="red"/><text x="910" y="300" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">300</text>
+<path d="M 0 400 L 900 400" stroke="red"/><text x="910" y="400" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">400</text>
+<path d="M 0 500 L 900 500" stroke="red"/><text x="910" y="500" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">500</text>
+<path d="M 0 600 L 900 600" stroke="red"/><text x="910" y="600" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">600</text>
+<path d="M 0 700 L 900 700" stroke="red"/><text x="910" y="700" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">700</text>
+<path d="M 0 800 L 900 800" stroke="red"/><text x="910" y="800" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">800</text>
+<path d="M 100 0 L 100 900" stroke="red"/><text x="95" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">100</text>
+<path d="M 200 0 L 200 900" stroke="red"/><text x="195" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">200</text>
+<path d="M 300 0 L 300 900" stroke="red"/><text x="295" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">300</text>
+<path d="M 400 0 L 400 900" stroke="red"/><text x="395" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">400</text>
+<path d="M 500 0 L 500 900" stroke="red"/><text x="495" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">500</text>
+<path d="M 600 0 L 600 900" stroke="red"/><text x="595" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">600</text>
+<path d="M 700 0 L 700 900" stroke="red"/><text x="695" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">700</text>
+<path d="M 800 0 L 800 900" stroke="red"/><text x="795" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">800</text>
+<!--  50 mid increments grid  -->
+<path d="M 0 50 L 900 50" stroke="yellow"/><text x="915" y="50" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">50</text>
+<path d="M 0 150 L 900 150" stroke="yellow"/>
+<path d="M 0 250 L 900 250" stroke="yellow"/>
+<path d="M 0 350 L 900 350" stroke="yellow"/>
+<path d="M 0 450 L 900 450" stroke="yellow"/>
+<path d="M 0 550 L 900 550" stroke="yellow"/>
+<path d="M 0 650 L 900 650" stroke="yellow"/>
+<path d="M 0 750 L 900 750" stroke="yellow"/>
+<path d="M 0 850 L 900 850" stroke="yellow"/>
+<path d="M 50 0 L 50 900" stroke="yellow"/><text x="45" y="920" fill="black" font-size="10" font-family="Nimbus Sans L,sans-serif">50</text>
+<path d="M 150 0 L 150 900" stroke="yellow"/>
+<path d="M 250 0 L 250 900" stroke="yellow"/>
+<path d="M 350 0 L 350 900" stroke="yellow"/>
+<path d="M 450 0 L 450 900" stroke="yellow"/>
+<path d="M 550 0 L 550 900" stroke="yellow"/>
+<path d="M 650 0 L 650 900" stroke="yellow"/>
+<path d="M 750 0 L 750 900" stroke="yellow"/>
+<path d="M 850 0 L 850 900" stroke="yellow"/>
+</svg>
