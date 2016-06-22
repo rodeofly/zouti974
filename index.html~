@@ -34,13 +34,15 @@
         </button>
         
         <div id="menu-div">
-          <button id="menu-close">&nbsp;X&nbsp;</button><button id="source-toggle">cam/url</button>
+          <button id="menu-close">&nbsp;X&nbsp;</button>
+          <button id="zouti-close">on/off</button>
+          <button id="source-toggle">cam/url</button>
           <div class="local">
               <div class="select"><label for="audioSource">Audio source: </label><select id="audioSource"></select></div>
               <div class="select"><label for="videoSource">Video source: </label><select id="videoSource"></select></div>
           </div>
           <div class="web">
-            <input id="web-url" row="1" cols="100" value="./pdf/1.pdf"/><button id="web-go">Go!</button>
+            <input type="text" id="web-url" row="1" cols="100" value="./pdf/1.svg" ><button id="web-go">Go!</button>
           </div>
         </div>
         <div id="delete" data-id=""></div>
