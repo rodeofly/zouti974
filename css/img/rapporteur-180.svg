@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="354.82877"
-   height="196.48625"
+   width="354.32037"
+   height="185.05612"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.1 "
-   sodipodi:docname="rapporteur_180deg.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="rapporteur-180.svg">
   <title
      id="title4369">Rapporteur en degrés</title>
   <defs
@@ -26,17 +26,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3384714"
-     inkscape:cx="406.19727"
-     inkscape:cy="46.998619"
+     inkscape:zoom="2.6769428"
+     inkscape:cx="107.49374"
+     inkscape:cy="94.446297"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1285"
-     inkscape:window-height="688"
-     inkscape:window-x="17"
-     inkscape:window-y="4"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
      fit-margin-top="0"
@@ -83,14 +83,14 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(177.41342,-874.94738)">
+     transform="translate(177.16412,-875.19668)">
     <path
-       transform="matrix(1.5267376,0,0,1.5267376,23.991591,-456.17131)"
        style="fill:none;stroke:#000000;stroke-width:0.65499657;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
        d="m -131.42857,1000.2406 0,-12.16413 c 0,-63.90723 51.807054,-115.71428 115.71429,-115.71428 C 48.192953,872.36219 100,924.16924 100,988.07648 l 0,11.60416 z"
        id="path2985"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cssscc" />
+       sodipodi:nodetypes="cssscc"
+       transform="matrix(1.5267376,0,0,1.5267376,23.991591,-456.17131)" />
     <g
        id="g3775"
        style="fill:#ffffff;fill-opacity:1">

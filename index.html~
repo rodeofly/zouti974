@@ -21,28 +21,28 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             
         <![endif]-->
-        
-        
-        <video id="cam" muted="" autoplay=""></video>
-        
-        <button id="menu">
-          <span id="scale-info" class="info" ></span> | <span id="rotation-info" class="info"></span>
-        </button>
-        <div id="menu-div">
-          <button id="create-grille">Grille</button>
-          <button id="create-regle">Règle</button>
-          <button id="create-equerre">Équerre</button>
-          <button id="create-rapporteur-180">180°</button>
-          <button id="create-rapporteur-360">360°</button>
-          <button id="create-pied-a-coulisse">Pied à coulisse</button>
-          <button id="create-couleurs">Couleurs</button>
-          <div class="select">
-            <label for="audioSource">Audio source: </label><select id="audioSource"></select></div>
-      
-          <div class="select">
-            <label for="videoSource">Video source: </label><select id="videoSource"></select></div>
+                
+        <div class="fullscreen-bg">
+          <video id="cam" muted="" autoplay=""></video>
+          <iframe id="web-iframe" src=""></iframe>
         </div>
+
+        <button id="menu">
+          <center>
+            <span id="scale-info" class="info" ></span><br><span id="rotation-info" class="info"></span>
+          </center>
+        </button>
         
+        <div id="menu-div">
+          <button id="menu-close">&nbsp;X&nbsp;</button><button id="source-toggle">cam/url</button>
+          <div class="local">
+              <div class="select"><label for="audioSource">Audio source: </label><select id="audioSource"></select></div>
+              <div class="select"><label for="videoSource">Video source: </label><select id="videoSource"></select></div>
+          </div>
+          <div class="web">
+            <input id="web-url" row="1" cols="100" value="./pdf/1.pdf"/><button id="web-go">Go!</button>
+          </div>
+        </div>
         <div id="delete" data-id=""></div>
         <div id="slider-s"></div><div id="slider-r"></div>
         
